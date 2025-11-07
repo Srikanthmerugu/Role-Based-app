@@ -20,7 +20,7 @@ function MenuList({ role }) {
         {menuItems.map((item, index) => (
           <li
             key={index}
-            className="flex items-center gap-3 px-3 py-2 rounded-lg bg-gray-800/60 text-gray-300 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-cyan-500 hover:text-white transition-all duration-300 cursor-pointer shadow-sm"
+            className="flex items-center just gap-3 px-3 py-2 rounded-lg bg-gray-800/60 text-gray-300 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-cyan-500 hover:text-white transition-all duration-300 cursor-pointer shadow-sm"
           >
             <span className="text-lg">{item.icon}</span>
             <span className="font-medium">{item.name}</span>
