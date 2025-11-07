@@ -1,16 +1,23 @@
-# React + Vite
+Role Based Menu System
+A modern React application showcasing role-based menu management with a sleek dark theme UI.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Features
+Role-based Access Control: Different menu items for Admin and Client roles
 
-Currently, two official plugins are available:
+Modern UI: Dark gradient theme with glass morphism effects
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Responsive Design: Works seamlessly across all device sizes
 
-## React Compiler
+Smooth Animations: Hover effects and transitions for enhanced user experience
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Clean Architecture: Custom hooks for efficient state management
 
-## Expanding the ESLint configuration
+🛠️ Tech Stack
+React - Frontend framework
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Tailwind CSS - Styling and responsive design
+
+Custom Hooks - Efficient state management
+
+📱 Screenshot
+<img width="1919" height="876" alt="Screenshot 2025-11-07 132958" src="https://github.com/user-attachments/assets/86678fa8-0cb2-4ceb-9b8b-2089df3d5204" />
