@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Shield, Clock, Star, Truck, Heart, Zap, MapPin, Users } from "lucide-react";
+import { Shield, Clock, Star, Truck, Zap } from "lucide-react";
 
 const FeaturesSection = () => {
   const features = [
@@ -9,29 +9,33 @@ const FeaturesSection = () => {
       title: "Lightning Fast",
       description: "Average delivery time under 30 minutes with real-time tracking",
       color: "from-yellow-400 to-amber-500",
-      bgColor: "bg-yellow-500/10"
+      glow: "shadow-yellow-400/40",
+      bgColor: "bg-yellow-500/10",
     },
     {
       icon: Shield,
       title: "100% Safe",
       description: "Contactless delivery and restaurant safety certifications",
       color: "from-amber-400 to-orange-500",
-      bgColor: "bg-amber-500/10"
+      glow: "shadow-amber-400/40",
+      bgColor: "bg-amber-500/10",
     },
     {
       icon: Star,
       title: "Premium Quality",
       description: "Curated restaurants with highest ratings and quality standards",
       color: "from-yellow-300 to-amber-400",
-      bgColor: "bg-yellow-400/10"
+      glow: "shadow-yellow-300/40",
+      bgColor: "bg-yellow-400/10",
     },
     {
       icon: Truck,
       title: "Free Delivery",
       description: "Zero delivery fees on orders above $25 from partner restaurants",
       color: "from-amber-500 to-orange-600",
-      bgColor: "bg-amber-600/10"
-    }
+      glow: "shadow-orange-400/40",
+      bgColor: "bg-amber-600/10",
+    },
   ];
 
   const containerVariants = {
@@ -39,9 +43,9 @@ const FeaturesSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -51,9 +55,9 @@ const FeaturesSection = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -62,12 +66,12 @@ const FeaturesSection = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-10 w-72 h-72 bg-yellow-500/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-1/4 -right-10 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl animate-float-delayed"></div>
-        
-        {/* Grid Pattern */}
+
+        {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="grid grid-cols-12 grid-rows-6 w-full h-full">
             {Array.from({ length: 72 }).map((_, i) => (
-              <div key={i} className="border border-yellow-200/20"></div>
+              <div key={i} className="border border-yellow-200/10"></div>
             ))}
           </div>
         </div>
@@ -83,7 +87,7 @@ const FeaturesSection = () => {
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-yellow-500/20 backdrop-blur-lg border border-yellow-500/30 text-yellow-200 px-6 py-3 rounded-2xl mb-6"
+            className="inline-flex items-center gap-2 bg-yellow-500/20 backdrop-blur-lg border border-yellow-500/30 text-yellow-200 px-6 py-3 rounded-2xl mb-6 shadow-yellow-400/40"
             whileHover={{ scale: 1.05 }}
           >
             <Zap className="w-5 h-5 text-yellow-400" />
@@ -99,73 +103,78 @@ const FeaturesSection = () => {
             </span>
           </h2>
           <p className="text-xl text-yellow-100/70 max-w-2xl mx-auto leading-relaxed">
-            We're revolutionizing food delivery with cutting-edge technology and 
+            We're revolutionizing food delivery with cutting-edge technology and
             uncompromising quality standards.
           </p>
         </motion.div>
 
         {/* Features Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="group relative"
-            >
-              {/* Card */}
-              <div className="relative h-full bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 shadow-2xl hover:shadow-yellow-500/20 transition-all duration-500 overflow-hidden">
-                {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                
+            <motion.div key={index} variants={itemVariants} className="group relative">
+              <motion.div
+                className={`relative h-full bg-gradient-to-b from-gray-900/80 to-gray-800/60 border border-yellow-200/10 rounded-3xl p-8 shadow-lg hover:shadow-xl hover:shadow-yellow-400/20 transition-all duration-500 hover:-translate-y-2 ${feature.glow}`}
+                whileHover={{ scale: 1.03 }}
+              >
+                {/* Glow Streak Line */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-yellow-300/5 via-transparent to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                  animate={{
+                    backgroundPosition: ["0% 0%", "100% 100%"],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 4,
+                    ease: "linear",
+                  }}
+                ></motion.div>
+
                 {/* Icon */}
                 <motion.div
-                  className={`inline-flex p-4 rounded-2xl mb-6 ${feature.bgColor} border border-white/20`}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ duration: 0.3 }}
+                  className={`inline-flex p-4 rounded-2xl mb-6 ${feature.bgColor} border border-yellow-400/30 group-hover:border-yellow-400/60 transition-all duration-500`}
+                  whileHover={{ scale: 1.15, rotate: 10 }}
                 >
-                  <feature.icon className="w-8 h-8 text-yellow-400" />
+                  <feature.icon className="w-8 h-8 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300" />
                 </motion.div>
 
-                {/* Content */}
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-300 transition-colors duration-300">
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-yellow-300 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-yellow-100/70 leading-relaxed">
+                <p className="text-yellow-100/70 leading-relaxed group-hover:text-yellow-100/90 transition-colors duration-300">
                   {feature.description}
                 </p>
 
-                {/* Hover Effect Line */}
+                {/* Bottom Glow Line */}
                 <motion.div
                   className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-yellow-400 to-amber-500 group-hover:w-full transition-all duration-500"
                   initial={{ width: 0 }}
                   whileHover={{ width: "100%" }}
                 />
-              </div>
+              </motion.div>
 
-              {/* Floating Element */}
+              {/* Floating Light Dot */}
               <motion.div
-                className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r ${feature.color} rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                animate={{ 
+                className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r ${feature.color} rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                animate={{
                   scale: [1, 1.5, 1],
-                  opacity: [0.5, 0.8, 0.5]
+                  opacity: [0.4, 0.8, 0.4],
                 }}
-                transition={{ 
-                  duration: 3, 
+                transition={{
+                  duration: 3,
                   repeat: Infinity,
-                  delay: index * 0.5 
+                  delay: index * 0.5,
                 }}
               />
             </motion.div>
           ))}
         </motion.div>
-
-     
       </div>
     </div>
   );

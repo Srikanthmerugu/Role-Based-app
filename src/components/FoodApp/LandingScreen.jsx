@@ -33,7 +33,7 @@ export default function LandingScreen() {
       setTimeout(() => {
         setIsVisible(false);
         setTimeout(() => setShowHero(true), 800);
-      }, 2000);
+      }, 500);
     };
 
     video.addEventListener("ended", handleEnd);
@@ -147,7 +147,7 @@ export default function LandingScreen() {
             </div>
 
             {/* Video Control */}
-            <motion.button
+            {/* <motion.button
               onClick={togglePlay}
               className="absolute top-8 right-8 z-20 p-3 rounded-2xl bg-black/40 backdrop-blur-md border border-yellow-500/30 hover:bg-yellow-500/20 transition-all duration-300 group"
               whileHover={{ scale: 1.1 }}
@@ -158,7 +158,7 @@ export default function LandingScreen() {
               ) : (
                 <Play className="w-6 h-6 text-yellow-400 group-hover:text-yellow-300" />
               )}
-            </motion.button>
+            </motion.button> */}
 
             {/* Main Content */}
             <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">

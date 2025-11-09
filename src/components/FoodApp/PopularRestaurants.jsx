@@ -28,7 +28,7 @@ const PopularRestaurants = () => {
       rating: 4.9,
       deliveryTime: "25-35 min",
       price: "$$$",
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/bc/d0/e9/getlstd-property-photo.jpg?w=500&h=-1&s=1",
       featured: true
     },
     {
